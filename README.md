@@ -3,7 +3,7 @@
 ### Running the code
 
 ##### Requirements
-- python
+- python version 3
 - pip
 
 ##### Setup
