@@ -26,7 +26,7 @@
         {% if final_balance %}
             <h1>Term Deposit Calculator Result</h1>
             <p>Final balance: ${{ final_balance }}</p>
-            <form method="get" action="{% url 'term_deposit_calculator' %}">
+            <form method="get" action="{% url 'calculate' %}">
                 <button type="submit">Recalculate</button>
             </form>
         {% else %}
