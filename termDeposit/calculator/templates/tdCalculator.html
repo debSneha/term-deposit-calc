@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Term Deposit Calculator</title>
+    <style>
+        /* Center the content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calculator-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        {% if final_balance %}
+            <h1>Term Deposit Calculator Result</h1>
+            <p>Final balance: ${{ final_balance }}</p>
+            <form method="get" action="{% url 'term_deposit_calculator' %}">
+                <button type="submit">Recalculate</button>
+            </form>
+        {% else %}
+            <h1>Term Deposit Calculator</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Calculate</button>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>
